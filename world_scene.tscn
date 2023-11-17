@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://67d46kvbujdn"]
+
+[ext_resource type="Script" path="res://world_scene.gd" id="1_kef0d"]
+[ext_resource type="Texture2D" uid="uid://cyfokjxagovh1" path="res://setting_2040504.png" id="1_yh04x"]
+[ext_resource type="Script" path="res://Area2D.gd" id="2_h5qfd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fp012"]
+size = Vector2(50, 51)
+
+[node name="WorldScene" type="Node2D"]
+script = ExtResource("1_kef0d")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_h5qfd")
+
+[node name="Setting2040504" type="Sprite2D" parent="Area2D"]
+position = Vector2(24.5, 24.5)
+scale = Vector2(0.0957031, 0.0957031)
+texture = ExtResource("1_yh04x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(25, 25.5)
+shape = SubResource("RectangleShape2D_fp012")
+
+[node name="DisplayDebug" type="Button" parent="."]
+offset_left = 505.0
+offset_top = 189.0
+offset_right = 618.0
+offset_bottom = 286.0
+
+[connection signal="pressed" from="DisplayDebug" to="." method="_on_display_debug_pressed"]

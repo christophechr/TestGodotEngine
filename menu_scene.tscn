@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://by2vliynjwhpd"]
+
+[ext_resource type="Script" path="res://quitMenuButton.gd" id="1_rlymi"]
+
+[sub_resource type="GDScript" id="GDScript_7mofy"]
+script/source = "extends Button
+"
+
+[node name="MenuScene" type="Node2D"]
+script = ExtResource("1_rlymi")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 409.0
+offset_top = 175.0
+offset_right = 702.0
+offset_bottom = 297.0
+text = "PLAY"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 413.0
+offset_top = 357.0
+offset_right = 706.0
+offset_bottom = 479.0
+text = "QUIT"
+script = SubResource("GDScript_7mofy")
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
